@@ -13,7 +13,20 @@ jobs:
         with:
           args: make build
         env:
-          PROJECT_PATH: "./gitlab"
           IMPORT: "jhuntoo/terraform-provider-gitlab"
           GOFLAGS: -mod=vendor
           GO111MODULE: on
+      - name: Debug
+        run: |
+          pwd
+          echo ${GOPATH}
+          echo ${GOROOT}    
+
+          
+      - name: Create Release
+        uses: docker://softprops/action-gh-release
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Release.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
