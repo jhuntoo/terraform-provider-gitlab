@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: 1.12.9
-              
+
       - name: Build
         run: |
           go install
@@ -35,8 +35,8 @@ jobs:
           echo ${GOROOT}
 
           echo "**********"
-          echo "/home/runner/work/jhuntoo/terraform-provider-gitlab"
-          echo "/home/runner/work/jhuntoo/terraform-provider-gitlab/bin/"
+          ls -la /home/runner/work/jhuntoo/terraform-provider-gitlab
+          ls -la /home/runner/work/jhuntoo/terraform-provider-gitlab/bin/
         env:
           GOPATH: /home/runner/work/jhuntoo/terraform-provider-gitlab  
 
