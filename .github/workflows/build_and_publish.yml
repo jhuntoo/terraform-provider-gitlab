@@ -29,12 +29,17 @@ jobs:
           echo ${GITHUB_WORKSPACE}
           echo ${GOPATH}
           echo ${GOROOT}
+
+          echo "**********"
+          echo "/home/runner/work/jhuntoo/terraform-provider-gitlab"
+          echo "/home/runner/work/jhuntoo/terraform-provider-gitlab/bin/"
         env:
           GOPATH: /home/runner/work/jhuntoo/terraform-provider-gitlab  
 
           
       - name: Create Release
         uses: docker://softprops/action-gh-release
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: /home/runner/work/jhuntoo/terraform-provider-gitlab/bin/terraform-provider-gitlab
         env:
