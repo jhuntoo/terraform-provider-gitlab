@@ -13,6 +13,7 @@ jobs:
         with:
           args: make build
         env:
+          PROJECT_PATH: "./gitlab"
           IMPORT: "jhuntoo/terraform-provider-gitlab"
           GOFLAGS: -mod=vendor
           GO111MODULE: on
