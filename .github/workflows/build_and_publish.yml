@@ -25,7 +25,8 @@ jobs:
           GOPATH: /home/runner/work/jhuntoo/terraform-provider-gitlab 
           IMPORT: "jhuntoo/terraform-provider-gitlab"
           GOFLAGS: -mod=vendor
-          GO111MODULE: on    
+          GO111MODULE: on
+          CGO_ENABLED: 0
 
       - name: Debug
         run: |
