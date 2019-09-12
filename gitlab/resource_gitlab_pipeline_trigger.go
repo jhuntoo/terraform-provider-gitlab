@@ -63,7 +63,7 @@ func resourceGitlabPipelineTriggerRead(d *schema.ResourceData, meta interface{})
 
 	log.Printf("[DEBUG] read gitlab PipelineTrigger %s/%d", project, pipelineTriggerID)
 
-	pipelineTrigger, response, err := client.PipelineTriggers.GetPipelineTrigger(project, pipelineTriggerID)
+	pipelineTrigger, _, err := client.PipelineTriggers.GetPipelineTrigger(project, pipelineTriggerID)
 	if err != nil {
 		return err
 	}
